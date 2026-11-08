@@ -1,0 +1,18 @@
+# Dashboard settings (Streamlit reads this file automatically)
+
+[server]
+port = 8501
+# Largest upload, in MB
+maxUploadSize = 50
+# Protection against cross-site request forgery (a trick where another
+# website makes your browser send requests to this dashboard)
+enableXsrfProtection = true
+headless = true
+
+[browser]
+# Do not send usage statistics to Streamlit
+gatherUsageStats = false
+
+[client]
+# Hide the developer menu from users
+toolbarMode = "minimal"

@@ -1,0 +1,20 @@
+# Secrets: NEVER upload (paste them into Streamlit Cloud's "Secrets" box instead)
+.streamlit/secrets.toml
+.env
+
+# Python leftovers
+__pycache__/
+*.pyc
+venv/
+
+# Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Datasets: the app does not need these (users upload their own file)
+combined.csv
+/*.csv
+/*.csv.gz
+*.zip
+
+# Note: CSV files inside models/ and models_holdout/ ARE needed and are kept.

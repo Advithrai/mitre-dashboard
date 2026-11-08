@@ -1,0 +1,153 @@
+rule_id,rule_desc
+19004,SCA summary: CIS Microsoft Windows 10 Enterprise Benchmark v1.12.0: Score less than 50% (33)
+19005,SCA summary: CIS Microsoft Windows 10 Enterprise Benchmark v1.12.0: Score less than 30% (29)
+19007,CIS Microsoft Windows 10 Enterprise Benchmark v1.12.0: Ensure 'Minimum password length' is set to '14 or more character(s)'.
+19008,CIS Microsoft Windows 10 Enterprise Benchmark v1.12.0: Ensure 'Allow unencrypted traffic' is set to 'Disabled'.
+19009,CIS Microsoft Windows 10 Enterprise Benchmark v1.12.0: Ensure 'Network access: Allow anonymous SID/Name translation' is set to 'Disabled'.
+19010,CIS Microsoft Windows 10 Enterprise Benchmark v1.12.0: Ensure 'Infrared monitor service (irmon)' is set to 'Disabled' or 'Not Installed'.: Status changed from failed to passed
+19011,CIS Microsoft Windows 10 Enterprise Benchmark v1.12.0: Ensure 'Accounts: Guest account status' is set to 'Disabled'.: Status changed from passed to failed
+19012,CIS Microsoft Windows 10 Enterprise Benchmark v1.12.0: Ensure 'Network access: Allow anonymous SID/Name translation' is set to 'Disabled'.: Status changed from passed to 'not applicable'
+19013,CIS Microsoft Windows 10 Enterprise Benchmark v1.12.0: Ensure 'Enforce password history' is set to '24 or more password(s)'.: Status changed from failed to 'not applicable'
+19014,CIS Microsoft Windows 10 Enterprise Benchmark v1.12.0: Ensure 'Enforce password history' is set to '24 or more password(s)'.: Status changed from 'not applicable' to failed
+19015,CIS Microsoft Windows 10 Enterprise Benchmark v1.12.0: Ensure 'Network access: Allow anonymous SID/Name translation' is set to 'Disabled'.: Status changed from 'not applicable' to passed
+202,Agent event queue is 90% full.
+203,Agent event queue is full. Events may be lost.
+205,Agent event queue is back to normal load.
+2901,New dpkg (Debian Package) requested to install.
+2902,New dpkg (Debian Package) installed.
+2904,Dpkg (Debian Package) half configured.
+501,New wazuh agent connected.
+502,Wazuh server started.
+503,Wazuh agent started.
+504,Wazuh agent disconnected.
+506,Wazuh agent stopped.
+510,Host-based anomaly detection event (rootcheck).
+533,Listened ports status (netstat) changed (new port opened or closed).
+5401,Failed attempt to run sudo.
+5402,Successful sudo to ROOT executed.
+5403,First time user executed sudo.
+550,Integrity checksum changed.
+5501,PAM: Login session opened.
+5502,PAM: Login session closed.
+5503,PAM: User login failed.
+553,File deleted.
+554,File added to the system.
+5901,New group added to the system.
+5902,New user added to the system.
+591,Log file rotated.
+594,Registry Key Integrity Checksum Changed
+597,Registry Key Entry Deleted.
+598,Registry Key Entry Added to the System
+60104,Windows audit failure event.
+60106,Windows logon success.
+60109,User account enabled or created.
+60110,User account changed.
+60111,User account disabled or deleted.
+60112,Windows audit policy changed.
+60118,Windows workstation logon success.
+60122,Logon failure - Unknown user or bad password.
+60132,System time changed.
+60137,Windows User Logoff.
+60154,Administrators group changed.
+60160,Domain users group changed.
+60602,Windows application error event.
+60608,Summary event of the report's signatures.
+60610,Windows installer began an installation process.
+60612,Application installed Product: Update for x64-based Windows Systems (KB5001716) -- Installation completed successfully..
+60635,Windows installer reconfigured the product.
+60642,Software protection service scheduled successfully.
+60644,Proof of purchase installed successfully.
+60646,License activation (slui.exe) failed.
+60668,The Windows search service started.
+60671,The Windows search service removed the old search index successfully.
+60672,The Windows Search Service attempted to remove the old search index.
+60702,The VSS service is shutting down due to idle timeout.
+60703,The VSS service is shutting down due to a shutdown event from the service control manager.
+60730,Inconsistent system shutdown detected.
+60775,SessionEnv was unavailable to handle a notification event.
+60776,SessionEnv was unavailable to handle a critical notification event.
+60778,The shell stopped unexpectedly.
+60790,The registry file is still in use by other applications or services.
+60798,The database engine attached a database.
+60805,The database engine is starting a new instance.
+60807,The database engine is initiating recovery steps.
+60808,The database engine is replaying log file C:\Winnt\system32\wins\j50.log.
+60809,The database engine has completed recovery steps.
+61017,The process was terminated due to an unhandled exception.
+61021,.NET Runtime - Fatal execution engine error.
+61060,The open procedure for service remote access failed.
+61061,Multiple Windows error application events.
+61102,Windows System error event
+61104,Service startup type was changed
+61107,Connected User Experiences and Telemetry terminated unexpectedly
+61109,Name resolution for the name wpad timed out
+61110,Multiple System error events
+61138,New Windows Service Created
+61602,Windows Sysmon error event
+61618,Sysmon - Suspicious Process - svchost.exe
+61620,Sysmon - Suspicious Process - lsm.exe
+61625,Sysmon - Suspicious Process - lsass
+61640,Sysmon - Suspicious Process - explorer.exe
+61643,Multiple Sysmon error events
+63102,Windows Eventlog error event
+63103,The audit log was cleared
+63104,A Windows log file was cleared
+657,Active response: restart-wazuh.exe - add
+750,Registry Value Integrity Checksum Changed
+751,Registry Value Entry Deleted.
+752,Registry Value Entry Added to the System
+89502,"WmiConsumerEvent created, possible persistence tactic using command-executing binaries"
+92000,Scripting interpreter spawned a new process
+92004,Powershell process spawned Windows command shell instance
+92005,Command shell started script with /c modifier
+92006,"Powershell script compiling code using CSC.exe, possible malware drop"
+92021,Powershell was used to delete files or directories
+92024,Powershell used to copy SAM hive from VSS
+92027,Powershell process spawned powershell instance
+92029,Powershell executed script from suspicious location
+92031,Discovery activity executed
+92032,Suspicious Windows cmd shell execution
+92033,Discovery activity spawned via powershell execution
+92036,A C:\\Windows\\System32\\net.exe binary was started by a Windows cmd shell
+92039,A net.exe account discovery command was initiated
+92041,Value added to registry key has Base64-like pattern
+92043,Netsh used to add firewall rule
+92046,Possible use of fodhelper.exe used to bypass UAC and execute of malicious software
+92052,Windows command prompt started by an abnormal process
+92055,Known auto-elevated utility FodHelper.EXE may have been used to bypass UAC
+92056,"Powershell process invoked known auto-elevated utility ComputerDefaults.EXE, may have been used to bypass UAC"
+92057,Powershell.exe spawned a powershell process which executed a base64 encoded command
+92066,C:\\Windows\\Temp\\xordump.exe binary in a suspicious location launched by C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe
+92074,curl.exe launched with commands to create a binary file
+92076,"Rundll32 executing suspicious .lock file, possible persistence tactic"
+92102,Suspicious DCOM/RPC activity from Powershell process
+92107,Script generated suspicious network activity over TCP protocol
+92110,Detected WinRM activity from 0:0:0:0:0:0:0:1 to 0:0:0:0:0:0:0:1
+92151,Binary loaded PowerShell automation library - Possible unmanaged Powershell execution by suspicious process
+92152,Printer spooler service loaded a dll file. Possible PrintNightmare exploit: CVE-2021-34527
+92154,Process loaded taskschd.dll module. May be used to create delayed malware execution
+92157,An executable - C:\\Windows\\Temp\\9757AC32-EDE8-4DE6-BDBB-58AF6B7A13BA\\DismHost.exe - loaded C:\\Windows\\Temp\\9757AC32-EDE8-4DE6-BDBB-58AF6B7A13BA\\wdscore.dll from the Temp directory.
+92200,Scripting file created under Windows Temp or User folder
+92201,C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe created a new scripting file under Windows Temp or User data folder
+92203,Executable file created by powershell: C:\\ProgramData\\cmd.exe
+92204,Powershell process created executable file in AppData temp folder
+92205,Powershell process created an executable file in Windows root folder
+92206,"DLL file created by printer spool service, possible malware binary drop from PrintNightmare exploit"
+92207,Executable file dropped in Users\Public folder
+92210,Suspicious file compression activity in Users\Public folder
+92211,Suspicious executable file creation by rundll32: C:\\Users\\mari\\AppData\\Local\\Microsoft\\CLR_v4.0\\UsageLogs\\rundll32.exe.log
+92212,Suspicious file compression activity by powershell: C:\\Windows\\System32\\staged.zip
+92213,Executable file dropped in folder commonly used by malware
+92217,Executable dropped in Windows root folder
+92219,Possible DLL search order hijack by C:\\Windows\\SoftwareDistribution\\Download\\34b9dd2a668deb5b86d2bc049e689260\\Metadata\\UpdateAgent.dll created in Windows root folder
+92222,An executable C:\\WINDOWS\\system32\\calc.exe created a file in a Windows folder
+92226,Powershell process has copied an executable file to Windows start-up folder
+92227,C:\\Windows\\System32\\curl.exe process created a dll binary
+92302,Registry entry to be executed on next logon was modified using command line application reg.exe
+92305,Command interpreter added to registry key associated to UAC bypass by auto-elevated processes
+92306,C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe added to the registry a subkey associated with UAC bypass by auto-elevated processes
+92307,"Evidence of new service creation found in registry under HKLM\\System\\CurrentControlSet\\Services\\Fax\\ImagePath binary is: C:\\windows\\system32\\WindowsPowerShell\\v1.0\\powershell.exe -noexit -c \""write-host 'T1543.003 Test'\"""
+92400,Possible code injection on explorer.exe by C:\\Windows\\System32\\WerFault.exe
+92403,"Local Security Authority Subsystem Service (LSASS) process was accessed by C:\\Windows\\System32\\rdrleakdiag.exe, possible code injection for credential dumping"
+92900,"Lsass process was accessed by C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe with read permissions, possible credential dump"
+92910,"Explorer process was accessed by C:\\Users\\mari\\AppData\\Local\\Microsoft\\OneDrive\\Update\\OneDriveSetup.exe, possible process injection"
