@@ -11,17 +11,19 @@ PAGES (tabs)
   6. About             what the scores mean and what they do not mean
 
 SECURITY
-  - password login (auth.py)
-  - CSV (or CSV.gz) only, size limit in .streamlit/config.toml
+  - password login (auth.py); on Render the username and password HASH come
+    from environment variables, on a laptop from .streamlit/secrets.toml
+  - CSV (or CSV.gz) only; size limits from .streamlit/config.toml and the
+    MAX_UPLOAD_ROWS / MAX_UNZIPPED_MB environment variables
   - the upload stays in memory for this browser session only; it is never
     written to disk and is forgotten on log out
-  - runs on this computer only (localhost)
 """
 from __future__ import annotations
 
 import gzip
 import io
 import json
+import os
 from pathlib import Path
 
 import joblib
@@ -42,8 +44,9 @@ MODEL_DIRS = {
     "Full model (trained on all days)": "models",
     "Held-out model (never saw 9–10 Dec 2024)": "models_holdout",
 }
-MAX_ROWS = 300_000                     # alert rows per upload
-MAX_UNZIPPED_MB = 600                  # protection against huge .gz files
+# Limits. On Render they are set as environment variables (free plan: 512 MB RAM).
+MAX_ROWS = int(os.environ.get("MAX_UPLOAD_ROWS", "300000"))        # alert rows per upload
+MAX_UNZIPPED_MB = int(os.environ.get("MAX_UNZIPPED_MB", "200"))    # protection against huge .gz files
 LOW_CONF = 0.0                         # best score at or below this = low confidence
 GREEN, RED, GREY = "#2e7d32", "#c62828", "#9e9e9e"
 
@@ -598,6 +601,10 @@ be separated.
 **Important for the demo.** If you upload days from the Windows-APT 2025 dataset, the model
 has already seen those commands in training, so its guesses there will look better than
 the measured scores above. The measured scores are the honest ones.
+
+**Privacy.** An uploaded file is processed in memory only. It is never saved, and it is
+forgotten when you log out or close the session. Please do not upload logs from real
+organisations.
 """)
 
 

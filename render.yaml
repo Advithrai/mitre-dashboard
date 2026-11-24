@@ -1,0 +1,21 @@
+# Put this file at the ROOT of your GitHub repo (next to app.py).
+services:
+  - type: web
+    name: mitre-dashboard
+    runtime: python
+    plan: free                      # change to "standard" if the app runs out of memory
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true
+    healthCheckPath: /_stcore/health
+    autoDeploy: false               # deploy only when you click, so a bad push cannot break the demo
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9               # CHANGE to the version printed by print_pins.py (same as your venv)
+      - key: APP_USERNAME
+        sync: false                 # you type this value in the Render dashboard
+      - key: APP_PASSWORD_HASH
+        sync: false                 # paste the bcrypt hash (starts with $2b$)
+      - key: MAX_UPLOAD_ROWS
+        value: "100000"             # free plan has only 512 MB of memory
+      - key: MAX_UNZIPPED_MB
+        value: "200"
