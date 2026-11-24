@@ -3,13 +3,12 @@
 </p>
 
 <p align="center">
+  <a href="https://mitre-dashboard.onrender.com"><img alt="Live demo" src="https://img.shields.io/badge/live%20demo-open-2ea44f"></a>
   <img alt="Python" src="https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white">
   <img alt="Streamlit" src="https://img.shields.io/badge/Streamlit-dashboard-FF4B4B?logo=streamlit&logoColor=white">
   <img alt="Model" src="https://img.shields.io/badge/Model-TF--IDF%20%2B%20Linear%20SVM-0d1b3e">
-  <img alt="Explainability"
-     src="https://img.shields.io/badge/Explainability-SHAP-ff7a6b.svg">
-   <img alt="Deploy" src="https://img.shields.io/badge/Deploy-Render-46E3B7?logo=render&logoColor=white">
-</p>
+  <img alt="Explainability" src="https://img.shields.io/badge/Explainability-SHAP-ff7a6b.svg">
+  <img alt="Deploy" src="https://img.shields.io/badge/Deploy-Render-46E3B7?logo=render&logoColor=white">
 </p>
 
 # APT Technique & Candidate Group Dashboard
@@ -25,6 +24,12 @@ export (CSV) and it will:
 > It is not a probability and not proof of who attacked. The ranking was tested on
 > simulated attacks only.
 
+> **Try it:** <https://mitre-dashboard.onrender.com>
+> The app is password-protected and runs on a free plan, so the first visit after a quiet
+> period can take about 60 seconds to wake up. For a demo login, email me
+> ([advithrai75@gmail.com](mailto:advithrai75@gmail.com)), or run it locally using the steps
+> below. `python make_synthetic.py` creates a small made-up CSV you can upload to try every tab.
+
 ---
 
 ## Contents
@@ -38,6 +43,7 @@ export (CSV) and it will:
 - [Your CSV file](#your-csv-file)
 - [Security](#security)
 - [Honest-use notes](#honest-use-notes)
+- [How I built this with AI](#how-i-built-this-with-ai)
 - [Data and references](#data-and-references)
 
 ---
@@ -117,7 +123,7 @@ mitre-dashboard/
   requirements.txt          pinned package versions
   render.yaml               Render deployment settings
   assets/
-    banner.svg              the banner at the top of this page
+    ttplens_banner_teal.svg the banner at the top of this page
   .streamlit/
     config.toml             upload limit, XSRF protection, no usage stats
     secrets.toml.example    template for local login (copy to secrets.toml)
@@ -153,7 +159,8 @@ Open a terminal in the project folder, then:
    ```
    streamlit run app.py
    ```
-   It opens at <http://localhost:8501>. Log in and upload your Wazuh CSV.
+   It opens at <http://localhost:8501>. Log in and upload your Wazuh CSV
+   (or the made-up file from `python make_synthetic.py`).
 
 Stop it with **Ctrl + C**.
 
@@ -222,6 +229,20 @@ An *attack* is any program whose parent is the Caldera agent (`splunkd.exe` or
   **candidate groups**, not the real attacker.
 - Whole days contain many different attacks mixed together; rank one burst of activity on
   one computer for a meaningful result.
+
+
+## 🤖 How I Built This Project with AI
+
+- **AI Tool Used:** Claude (AI coding assistant).
+
+- **What I Directed:** Independently planned the project architecture and made key technical decisions, including selecting MITRE ATT&CK techniques for detection, choosing a Linear SVM with Exact SHAP for explainability, implementing Weighted Jaccard similarity for candidate group ranking, and defining application security requirements.
+
+- **What AI Helped Build:** Used Claude to assist with implementing the Streamlit dashboard UI, authentication functionality, login security mechanisms, and Render deployment configuration. Reviewed, modified, and integrated the generated code to align with the project requirements.
+
+- **A Problem I Identified and Addressed:** Free-tier cloud hosting has limited memory resources, making large file uploads a potential issue. I implemented `MAX_UPLOAD_ROWS` and `MAX_UNZIPPED_MB` restrictions to limit excessive memory consumption when processing large or compressed files.
+
+- **How I Tested It:** Evaluated the machine learning model using held-out data to assess its performance on unseen samples. Tested authentication lockouts, oversized uploads, malformed files, and synthetic datasets to verify application reliability and security.
+
 
 ## Data and references
 
