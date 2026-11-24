@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" xmlns:c2pa="http://c2pa.org/manifest">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#03111a"/>
+      <stop offset="0.6" stop-color="#06202b"/>
+      <stop offset="1" stop-color="#0a2a2c"/>
+    </linearGradient>
+    <linearGradient id="fire" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#bef264"/>
+      <stop offset="0.5" stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="fireV" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#bef264"/>
+      <stop offset="1" stop-color="#2dd4bf"/>
+    </linearGradient>
+    <linearGradient id="violet" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0e7490"/>
+      <stop offset="1" stop-color="#5eead4"/>
+    </linearGradient>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#0f3a40"/>
+    </pattern>
+    <radialGradient id="glowR" cx="0.8" cy="0.45" r="0.42">
+      <stop offset="0" stop-color="#84cc16" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#84cc16" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowL" cx="0.08" cy="0.2" r="0.4">
+      <stop offset="0" stop-color="#14b8a6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#14b8a6" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .mono { font-family: ui-monospace, 'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace; }
+      .lbl  { fill: #7fb5b5; font-size: 11px; letter-spacing: 1.6px; }
+      .tiny { fill: #4f8286; font-size: 10px; letter-spacing: 1px; }
+      .grow { transform-box: fill-box; transform-origin: left center; animation: grow 4.5s ease-out infinite; }
+      .g2 { animation-delay: .15s; } .g3 { animation-delay: .3s; } .g4 { animation-delay: .45s; }
+      .ring { transform-box: fill-box; transform-origin: center; animation: ring 2s ease-out infinite; }
+      .spin { transform-box: fill-box; transform-origin: center; animation: spin 12s linear infinite; }
+      .blink { animation: blink 1.6s ease-in-out infinite; }
+      .scan { animation: scan 5s linear infinite; }
+      @keyframes grow { 0% { transform: scaleX(0); } 40%,100% { transform: scaleX(1); } }
+      @keyframes ring { from { transform: scale(0.5); opacity: 0.9; } to { transform: scale(2.4); opacity: 0; } }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      @keyframes blink { 50% { opacity: 0.35; } }
+      @keyframes scan { from { transform: translateY(0); } to { transform: translateY(150px); } }
+    </style>
+  </defs>
+
+  <rect width="1200" height="360" fill="url(#bg)"/>
+  <rect width="1200" height="360" fill="url(#dots)"/>
+  <rect width="1200" height="360" fill="url(#glowL)"/>
+  <rect width="1200" height="360" fill="url(#glowR)"/>
+
+  <!-- Left: identity -->
+  <g class="mono">
+    <!-- hexagon + crosshair -->
+    <g transform="translate(96,84)">
+      <path d="M0 -36 L31 -18 V18 L0 36 L-31 18 V-18 Z" fill="#08262d" stroke="url(#fireV)" stroke-width="2.5"/>
+      <g class="spin">
+        <circle r="17" fill="none" stroke="#1d5560" stroke-width="1.5" stroke-dasharray="3 5"/>
+      </g>
+      <circle r="11" fill="none" stroke="url(#fireV)" stroke-width="2"/>
+      <g stroke="url(#fireV)" stroke-width="2" stroke-linecap="round">
+        <line x1="0" y1="-20" x2="0" y2="-14"/><line x1="0" y1="14" x2="0" y2="20"/>
+        <line x1="-20" y1="0" x2="-14" y2="0"/><line x1="14" y1="0" x2="20" y2="0"/>
+      </g>
+      <circle class="ring" r="5" fill="none" stroke="#ff3d81" stroke-width="1.5"/>
+      <circle r="3.5" fill="#2dd4bf"/>
+    </g>
+    <text x="142" y="78" fill="#2dd4bf" font-size="13" letter-spacing="3.5">MITRE ATT&amp;CK · ATTRIBUTION</text>
+    <text x="142" y="98" fill="#4f8286" font-size="11" letter-spacing="1.5">/ windows telemetry · explainable machine learning</text>
+
+    <text x="60" y="190" fill="#f0fdfa" font-size="70" font-weight="700" letter-spacing="-2">TTP<tspan fill="url(#fire)">Lens</tspan></text>
+    <text x="64" y="232" fill="#a5cfcf" font-size="19">Logs in. Techniques out.</text>
+    <text x="64" y="258" fill="#a5cfcf" font-size="19">Rank the groups. Show the why.</text>
+
+    <!-- pipeline chips -->
+    <g font-size="11" letter-spacing="1.5">
+      <rect x="64" y="288" width="112" height="28" rx="14" fill="none" stroke="#1d5560"/>
+      <text x="120" y="306" fill="#5eead4" text-anchor="middle">TELEMETRY</text>
+      <text x="190" y="306" fill="#4f8286">→</text>
+      <rect x="210" y="288" width="112" height="28" rx="14" fill="none" stroke="#1d5560"/>
+      <text x="266" y="306" fill="#bef264" text-anchor="middle">TECHNIQUE</text>
+      <text x="336" y="306" fill="#4f8286">→</text>
+      <rect x="356" y="288" width="84" height="28" rx="14" fill="#2a0a1c" stroke="#ff3d81"/>
+      <text x="398" y="306" fill="#ff6fa3" text-anchor="middle">GROUP</text>
+    </g>
+  </g>
+
+  <!-- Right: ranking panel -->
+  <g class="mono" transform="translate(620,46)">
+    <rect x="0" y="0" width="540" height="268" rx="14" fill="#04141b" fill-opacity="0.8" stroke="#17454d" stroke-width="1.5"/>
+    <text class="lbl" x="30" y="32">DETECTED TECHNIQUES</text>
+    <circle class="blink" cx="500" cy="28" r="4" fill="#bef264"/>
+    <text class="tiny" x="488" y="32" text-anchor="end">live</text>
+
+    <!-- technique chips -->
+    <g font-size="11">
+      <rect x="30" y="44" width="84" height="22" rx="11" fill="#08262d" stroke="#1d5560"/>
+      <text x="72" y="59" fill="#5eead4" text-anchor="middle">T1059.003</text>
+      <rect x="122" y="44" width="62" height="22" rx="11" fill="#08262d" stroke="#1d5560"/>
+      <text x="153" y="59" fill="#5eead4" text-anchor="middle">T1105</text>
+      <rect x="192" y="44" width="62" height="22" rx="11" fill="#08262d" stroke="#1d5560"/>
+      <text x="223" y="59" fill="#5eead4" text-anchor="middle">T1112</text>
+      <rect x="262" y="44" width="84" height="22" rx="11" fill="#08262d" stroke="#1d5560"/>
+      <text x="304" y="59" fill="#5eead4" text-anchor="middle">T1547.001</text>
+      <rect x="354" y="44" width="84" height="22" rx="11" fill="#08262d" stroke="#1d5560"/>
+      <text x="396" y="59" fill="#5eead4" text-anchor="middle">T1218.010</text>
+      <text x="452" y="59" fill="#4f8286">+ more</text>
+    </g>
+
+    <line x1="30" y1="82" x2="510" y2="82" stroke="#123840"/>
+    <text class="lbl" x="30" y="104">CANDIDATE GROUPS</text>
+    <text class="tiny" x="510" y="104" text-anchor="end">compatibility score</text>
+
+    <!-- rows -->
+    <g font-size="12">
+      <!-- 1 -->
+      <text x="30" y="134" fill="#f0fdfa">1  APT41</text>
+      <rect x="140" y="124" width="270" height="10" rx="5" fill="#08262d"/>
+      <rect class="grow" x="140" y="124" width="238" height="10" rx="5" fill="url(#fire)"/>
+      <text x="424" y="134" fill="#bef264">0.62</text>
+
+      <!-- 2 -->
+      <text x="30" y="164" fill="#a5cfcf">2  Chimera</text>
+      <rect x="140" y="154" width="270" height="10" rx="5" fill="#08262d"/>
+      <rect class="grow g2" x="140" y="154" width="185" height="10" rx="5" fill="url(#violet)"/>
+      <text x="424" y="164" fill="#7fb5b5">0.48</text>
+
+      <!-- 3 -->
+      <text x="30" y="194" fill="#a5cfcf">3  Winnti</text>
+      <rect x="140" y="184" width="270" height="10" rx="5" fill="#08262d"/>
+      <rect class="grow g3" x="140" y="184" width="143" height="10" rx="5" fill="url(#violet)"/>
+      <text x="424" y="194" fill="#7fb5b5">0.37</text>
+
+      <!-- 4 tie -->
+      <text x="30" y="224" fill="#a5cfcf">4  APT30 = APT12</text>
+      <rect x="140" y="214" width="270" height="10" rx="5" fill="#08262d"/>
+      <rect class="grow g4" x="140" y="214" width="120" height="10" rx="5" fill="url(#violet)"/>
+      <text x="424" y="224" fill="#7fb5b5">0.31</text>
+      <rect x="462" y="208" width="48" height="22" rx="8" fill="#2a0a1c" stroke="#ff3d81" stroke-width="1.2"/>
+      <text x="486" y="223" fill="#ff6fa3" font-size="11" text-anchor="middle" letter-spacing="1">⚠ TIE</text>
+    </g>
+
+    <!-- footer -->
+    <line x1="30" y1="240" x2="510" y2="240" stroke="#123840"/>
+    <text class="tiny" x="30" y="257">weighted Jaccard · not a probability</text>
+    <text class="tiny" x="510" y="257" text-anchor="end" fill="#bef264">SHAP · why this guess</text>
+  </g>
+
+  <rect x="0" y="356" width="1200" height="4" fill="url(#fire)"/>
+<metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo5OWI0YTU0Yy0xOGJkLTQ5NTctYTA0OC05ODEwODkzMjliYWIAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaCExThugmFq4pg24pTuNcIwAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo0NjhmYzg4YS0yNTk0LTQ4ODgtODQwOS00ZGY4Y2ZmOTRjYzFscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNo2HGbTM7jrwpW4CHI87zGHwAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggZEpYhwHTl1Lj/6INhbWncfvWO8u3mEtYTs6yaOz5I1CkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaH3bTOFnqdGa3y7vtsRYmyQAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIPL6mOiAIbZKSwJTDYhR8UOjEGyhAgJBUO9tHwmiNBglZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GSEvZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjk5YjRhNTRjLTE4YmQtNDk1Ny1hMDQ4LTk4MTA4OTMyOWJhYi9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjVlZWIxY2M5LThlNjAtNDY3Mi05YmZiLWU5MzhlODViZjk3Y3JjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCBkSliHAdOXUuP/og2Ftadx+9Y7y7eYS1hOzrJo7PkjUKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggh+LeG23EqZQ0lX+9FnLanqD4Kd1jpXN5RhX/wiCmiD6iY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggU/xXDCsKKgQMwdN8Z7vISSOjvHWUxXRE/aHuhKwzA0F0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQATgTm/O6n1Ejotl6W8TNgRR+BSXbmU8LEA/14uYwO8epmUtb2kL9JbuhHf7dIppbYkx5Qrs7BRDMjrz/2qYwIs=</c2pa:manifest></metadata></svg>
