@@ -8,7 +8,8 @@
   <img alt="Model" src="https://img.shields.io/badge/Model-TF--IDF%20%2B%20Linear%20SVM-0d1b3e">
   <img alt="Explainability"
      src="https://img.shields.io/badge/Explainability-SHAP-ff7a6b.svg">
-  <img alt="Deploy" src="[https://img.shields.io/badge/Deploy-Render-46E3B7?logo=render&logoColor=white](https://img.shields.io/badge/Explainability-SHAP-orange?style=flat-square&utm_source=chatgpt.com)">
+   <img alt="Deploy" src="https://img.shields.io/badge/Deploy-Render-46E3B7?logo=render&logoColor=white">
+</p>
 </p>
 
 # APT Technique & Candidate Group Dashboard
