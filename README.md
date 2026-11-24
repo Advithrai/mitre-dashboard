@@ -6,7 +6,7 @@
   <img alt="Python" src="https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white">
   <img alt="Streamlit" src="https://img.shields.io/badge/Streamlit-dashboard-FF4B4B?logo=streamlit&logoColor=white">
   <img alt="Model" src="https://img.shields.io/badge/Model-TF--IDF%20%2B%20Linear%20SVM-0d1b3e">
-  <img alt="Explainability" src="https://img.shields.io/badge/Explainability-exact%20SHAP-ff7a6b">
+  <img alt="Explainability" src="https://img.shields.io/badge/Explainability-SHAP-ff7a6b?style=flat">
   <img alt="Deploy" src="https://img.shields.io/badge/Deploy-Render-46E3B7?logo=render&logoColor=white">
 </p>
 
