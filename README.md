@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="MITRE ATT&CK technique detection and candidate group ranking dashboard" width="100%">
+  <img src="assets/ttplens_banner_teal.svg" alt="MITRE ATT&CK technique detection and candidate group ranking dashboard" width="100%">
 </p>
 
 <p align="center">
